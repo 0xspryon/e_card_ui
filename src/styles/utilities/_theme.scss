@@ -1,0 +1,47 @@
+$page_width: 70% !default;
+$blue_color: #1473e6;
+$blue_black: #263340;
+$white: #fff;
+$orange: #ffcc01;
+$text_color: #707070;
+$btn_primary_background: rgb(0, 120, 212);
+
+$color_primary: $blue_color;
+$color_primary_light: tint($color_primary, 10%);
+$color_primary_dark: shade($color_primary, 10%);
+
+$color_secondary: $orange;
+$color_secondary_light: tint($color_secondary, 10%);
+$color_secondary_dark: shade($color_secondary, 10%);
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+@mixin btn_primary($color) {
+  &:hover {
+    background: tint($color, 50%);
+    color: shade($color, 40%);
+  }
+  &:active {
+    background: shade($color, 10%);
+    color: white;
+  }
+  color: black;
+  box-sizing: content-box;
+  background: transparent;
+}
