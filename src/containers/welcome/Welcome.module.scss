@@ -18,7 +18,8 @@
       grid-template-columns: min-content 1fr 115px 115px;
       justify-items: center;
       align-items: center;
-      position: absolute;
+      position: fixed;
+      z-index: 1;
       top: 0px;
       width: 100%;
       grid-gap: 8px;
@@ -58,7 +59,7 @@
       left: 10%;
       @include media_below($media-sm) {
         width: 90%;
-      left: 2%;
+        left: 2%;
       }
     }
   }
@@ -117,5 +118,13 @@
     align-items: center;
     padding: $dimens_unit * 2;
     background: #f4f6f8;
+  }
+  .body {
+    height: 50%;
+    width: 50%;
+  }
+  .modal_container {
+    height: 50%;
+    width: 50%;
   }
 }

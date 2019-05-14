@@ -7,8 +7,10 @@ import { Text } from 'office-ui-fabric-react/lib/Text';
 import social_logo from './../../assets/imgs/social_logo.png'
 import { Link } from 'office-ui-fabric-react/lib/Link';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
+import { Link as RouterLink } from 'react-router-dom'
 
-class Container extends Component {
+class Welcome extends Component {
+
     render() {
         return (
             <div className={styles.container}>
@@ -19,8 +21,18 @@ class Container extends Component {
                     >
                         <img src={social_logo} className={styles.img} />
                         <span></span>
-                        <PrimaryButton className={styles.btn} >Sign in</PrimaryButton>
-                        <PrimaryButton className={styles.btn} >Sign up</PrimaryButton>
+
+                        <RouterLink
+                            to={'/auth'}
+                        >
+                            <PrimaryButton className={styles.btn} >Sign in</PrimaryButton>
+                        </RouterLink>
+
+                        <RouterLink
+                            to={'/auth/register'}
+                        >
+                            <PrimaryButton className={styles.btn} >Sign up</PrimaryButton>
+                        </RouterLink>
                     </div>
                     <Text variant={`xxLarge`} block className={styles.cta_text_connect}>
                         Connect to create your complementary card!
@@ -39,6 +51,7 @@ class Container extends Component {
                         onBlur={() => console.log('onBlur called')}
                         onChange={() => console.log('onChange called')}
                         className={styles.search_field}
+
                     />
                 </div>
                 <div className={styles.middle_row}>
@@ -82,4 +95,4 @@ class Container extends Component {
     }
 }
 
-export default Container;
+export default Welcome;

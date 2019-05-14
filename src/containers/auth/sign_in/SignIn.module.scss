@@ -1,0 +1,22 @@
+.container {
+  height: 100%;
+  width: 100%;
+  //   background: #00808088;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  .first {
+    background-image: linear-gradient(to top, #80bceac0, #80bceac0), url("./../../../assets/imgs/humans.jpg");
+    background-size: cover, cover;
+    background-position: center;
+    background-repeat: repeat, no-repeat;
+    flex: 33% 0.8 0.8;
+  }
+  .second {
+    flex: 67% 1 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+  }
+}
